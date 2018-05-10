@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="258dp"
+    android:layout_height="65dp"
+    android:background="#ffffff"
+    android:clickable="false"
+    android:focusable="false"
+    android:foreground="?selectableItemBackground"
+    card_view:cardCornerRadius="0dp"
+    card_view:cardElevation="0dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:contentPadding="0dp">
+
+    <RelativeLayout
+        android:id="@+id/singleItemLayout"
+        android:paddingBottom="1dp"
+        android:background="@drawable/recycleritembottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageColor"
+            android:layout_width="5dp"
+            android:layout_height="65dp"
+            android:background="#ffffff"
+            android:contentDescription="@string/productimagecolor" />
+
+        <ImageView
+            android:id="@+id/itemImage"
+            android:layout_width="75dp"
+            android:layout_height="65dp"
+            android:padding="5dp"
+            android:background="@drawable/rightborder"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageColor"
+            android:contentDescription="@string/productimage" />
+
+        <RelativeLayout
+            android:id="@+id/prodtext"
+            android:layout_width="175dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bottomborderlistitem"
+            android:padding="3dp"
+            android:layout_toEndOf="@+id/itemImage">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:textColor="#3648A8"
+                android:layout_marginStart="5dp"
+                android:maxLines="1"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/ifcommentedimg"
+                android:layout_toEndOf="@+id/name"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="1dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:textColor="#4D4D4D"
+                android:layout_marginStart="5dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="175dp"
+            android:layout_height="25dp"
+            android:background="#ffffff"
+            android:layout_below="@+id/prodtext"
+            android:layout_toEndOf="@+id/itemImage">
+
+            <RelativeLayout
+                android:id="@+id/desctext"
+                android:padding="3dp"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/issue"
+                    android:textColor="#3648A8"
+                    android:textSize="9sp"
+                    android:layout_marginStart="5dp"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/editedlayout"
+                android:layout_toRightOf="@+id/desctext"
+                android:padding="3dp"
+                android:visibility="invisible"
+                android:background="@drawable/dividerlist"
+                android:layout_width="100dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/iscorrected"
+                    android:textSize="9sp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/ifeditedimg"
+                    android:layout_toRightOf="@id/iscorrected"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

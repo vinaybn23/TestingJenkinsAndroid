@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="258dp"
+    android:layout_height="65dp"
+    android:background="#ffffff"
+    android:clickable="false"
+    android:focusable="false"
+    android:foreground="?selectableItemBackground"
+    card_view:cardCornerRadius="0dp"
+    card_view:cardElevation="0dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:contentPadding="0dp">
+
+    <RelativeLayout
+        android:id="@+id/singleItemLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="1dp"
+        android:background="@drawable/recycleritembottom">
+
+        <ImageView
+            android:id="@+id/aplItemImage"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rightborder"
+            android:contentDescription="@string/productimage"
+            android:padding="5dp" />
+
+        <RelativeLayout
+            android:id="@+id/prodtext"
+            android:layout_width="145dp"
+            android:layout_height="65dp"
+            android:layout_toEndOf="@+id/aplItemImage"
+            android:background="#ffffff"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/aplName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:maxLines="1"
+                android:layout_marginStart="5dp"
+                android:textColor="#3648A8"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/aplDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/aplName"
+                android:layout_marginTop="5dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginStart="5dp"
+                android:textColor="#4D4D4D"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/facing"
+            android:layout_width="48dp"
+            android:layout_height="65dp"
+            android:layout_toEndOf="@+id/prodtext"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/facingsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

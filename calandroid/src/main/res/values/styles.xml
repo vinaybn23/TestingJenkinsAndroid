@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextLabel" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="AppTheme" parent="@android:style/Theme.Holo">
+        <item name="android:dropDownListViewStyle">@style/MySpinnerStyle</item>
+    </style>
+
+    <style name="MySpinnerStyle" parent="android:style/Widget.ListView.DropDown">
+        <item name="android:divider">#FFEEEEEE</item>
+        <item name="android:dividerHeight">0.5dp</item>
+    </style>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <TextView
+        android:id="@+id/search_item_name"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:textSize="14sp"
+        android:paddingTop="7dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:ellipsize="end"
+        android:background="@drawable/searchresultdivider"
+        android:textColor="#ffffff"
+        />
+
+

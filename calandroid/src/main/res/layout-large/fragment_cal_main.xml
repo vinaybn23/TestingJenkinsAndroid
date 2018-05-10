@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8D8D8">
+
+    <RelativeLayout
+        android:id="@+id/secondParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false">
+
+        <RelativeLayout
+            android:id="@+id/viewsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/searchLayout"
+            android:background="@drawable/generaldownborder"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="8dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:textColor="#3648A8"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/sos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/fittoheight"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/sos_image_selector" />
+
+            <ImageButton
+                android:id="@+id/fittoheight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/fittowidth"
+                android:background="@drawable/fitheight_image_selector"/>
+
+            <ImageButton
+                android:id="@+id/fittowidth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/ca"
+                android:background="@drawable/fitwidth_image_selector"/>
+
+            <ImageButton
+                android:id="@+id/ca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/rogView"
+                android:background="@drawable/ca_image_selector" />
+
+            <ImageButton
+                android:id="@+id/rogView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/pogView"
+                android:background="@drawable/rog_image_selector" />
+
+            <ImageButton
+                android:id="@+id/pogView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/splitView"
+                android:background="@drawable/pog_image_selector" />
+
+            <ImageButton
+                android:id="@+id/splitView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/split_image_selector" />
+
+            <TextView
+                android:id="@+id/categoryname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/title"
+                android:layout_toEndOf="@+id/title"
+                android:textColor="#3648A8"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pogrogLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/viewsLayout"
+            android:layout_toStartOf="@+id/searchresultlayout"
+            android:background="#FFFFFF"
+            android:padding="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/sos_layout"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:visibility="invisible"
+            android:layout_marginEnd="2dp"
+            android:splitMotionEvents="false"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/viewsLayout"
+            android:layout_toStartOf="@+id/searchresultlayout"
+            android:background="@drawable/generaldownborder"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <RelativeLayout
+                    android:id="@+id/sos_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_marginStart="-5dp"
+                    android:background="@drawable/rightborder">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Share Of Shelf"
+                        android:textSize="14sp"
+                        android:textColor="#4D4D4D"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/sos_viewby"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_toRightOf="@+id/sos_title">
+                    <TextView
+                        android:id="@+id/sos_viewby_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textSize="12sp"
+                        android:text="View by"
+                        android:textColor="#666666"/>
+                    <Spinner
+                        android:id="@+id/sos_spinner"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:background="#F4F4F4"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/sos_viewby_text">
+                    </Spinner>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/sos_viewby">
+
+                    <Button
+                        android:id="@+id/buttoncomp"
+                        android:layout_width="24dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="200dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/sos_green_legend" />
+
+                    <TextView
+                        android:id="@+id/textsosname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/textView"
+                        android:layout_alignTop="@+id/buttoncomp"
+                        android:text="SoS - "
+                        android:textColor="#4D4D4D"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/textcatname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/textsosname"
+                        android:layout_alignBottom="@+id/textsosname"
+                        android:layout_marginStart="6dp"
+                        android:layout_toEndOf="@+id/textsosname"
+                        android:textColor="#4D4D4D"
+                        android:textSize="11sp" />
+
+
+                    <Button
+                        android:id="@+id/buttonothers"
+                        android:layout_width="24dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="200dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/buttoncomp"
+                        android:background="@drawable/sos_red_legend" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/buttonothers"
+                        android:layout_marginStart="14dp"
+                        android:layout_toEndOf="@+id/buttonothers"
+                        android:text="SoS - "
+                        android:textColor="#4D4D4D"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/textothername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/textView"
+                        android:layout_alignBottom="@+id/textView"
+                        android:layout_alignStart="@+id/textcatname"
+                        android:textColor="#4D4D4D"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tototherper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/textothername"
+                        android:layout_alignBottom="@+id/textothername"
+                        android:layout_alignStart="@+id/totcatper"
+                        android:textColor="#4D4D4D"
+                        android:textSize="11sp" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/searchresultlayout"
+            android:layout_width="265dp"
+            android:layout_height="52dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/pogrogLayout"
+            android:background="@drawable/sortlayoutborder"
+            app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pogrogLayout"
+            app:layout_constraintTop_toBottomOf="@+id/searchLayout">
+
+            <RelativeLayout
+                android:id="@+id/titlelayout"
+                android:layout_width="155dp"
+                android:layout_height="50dp"
+                android:background="@drawable/leftborder">
+
+                <TextView
+                    android:id="@+id/searchTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="3dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/searchResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/searchTitle"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="28dp"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_toStartOf="@+id/titlelayout"
+                android:background="@drawable/left_border_search"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/sortBy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:layout_marginTop="7dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/sortspinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/sortBy"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:paddingTop="1dp"
+                    android:text="Location"
+                    android:textColor="#3648a8"
+                    android:background="@null" />
+
+                <ImageButton
+                    android:id="@+id/sort_drop_down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_alignBottom="@id/sortspinner"
+                    android:background="@drawable/viewby" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/searchresultview"
+            android:layout_width="265dp"
+            android:layout_height="52dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/pogrogLayout"
+            android:background="@drawable/sortlayoutborder"
+            android:paddingBottom="2dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pogrogLayout"
+            app:layout_constraintTop_toBottomOf="@+id/searchLayout">
+
+            <ImageButton
+                android:id="@+id/backimg"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/searchrightborder"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/searchname"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#3648a8"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingStart="7dp"
+                android:layout_toRightOf="@+id/backimg"
+                android:paddingTop="3dp" />
+
+            <TextView
+                android:id="@+id/searchcount"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textColor="#3648a8"
+                android:paddingStart="7dp"
+                android:layout_below="@+id/searchname"
+                android:layout_toRightOf="@+id/backimg"
+                android:paddingTop="3dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="265dp"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/relativeLayout4"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/searchresultlayout"
+            android:background="#D8D8D8"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            app:layout_constraintBottom_toTopOf="@+id/searchLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pogrogLayout"
+            app:layout_constraintTop_toBottomOf="@+id/searchresultlayout">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                app:reverseLayout="true"
+                app:stackFromEnd="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="265dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/viewsLayout"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/searchresultlayout"
+            android:background="@drawable/generaldownborder"
+            android:padding="5dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/search_box"
+                android:layout_width="260dp"
+                android:layout_height="35dp"
+                android:paddingStart="35dp"
+                android:paddingEnd="35dp"
+                android:paddingTop="9dp"
+                android:hint="@string/search_hint"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:gravity="start"
+                android:imeActionId="66"
+                android:imeOptions="actionSearch"
+                android:imeActionLabel="actionSearch"
+                android:textColorHint="#CCCCCC"
+                android:background="@drawable/searchborder"
+                android:ellipsize="end"
+                android:layout_gravity="start"
+                android:dropDownVerticalOffset="0dp"
+                android:dropDownWidth="wrap_content"
+                android:dropDownHeight="210dp"
+                android:inputType="textAutoComplete|textAutoCorrect"
+                android:textColor="#000000" >
+            </AutoCompleteTextView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/search" />
+
+            <ImageView
+                android:id="@+id/closesearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="230dp"
+                android:visibility="gone"
+                android:background="@drawable/search_close" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/pogrogLayout"
+            android:background="@drawable/topborder">
+
+            <ImageButton
+                android:id="@+id/submitCA"
+                android:layout_width="265dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#7985CB"
+                android:paddingEnd="80dp"
+                android:paddingStart="5dp"
+                android:src="@drawable/submit" />
+
+            <TextView
+                android:id="@+id/submittext"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="85dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Submit"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout5"
+            android:layout_width="758dp"
+            android:layout_height="25dp"
+            android:clickable="false"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/relativeLayout4"
+            android:background="@drawable/footer_layout"
+            android:padding="2dp">
+
+            <Button
+                android:id="@+id/viewname"
+                android:layout_width="35dp"
+                android:layout_height="18dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/textbuttonbg"
+                android:gravity="center"
+                android:textAlignment="gravity"
+                android:textColor="#ffffff"
+                android:textSize="11sp"
+                android:visibility="visible" />
+
+            <RelativeLayout
+                android:layout_width="718dp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@+id/viewname"
+                android:background="@drawable/leftborderfixedlayout">
+
+                <Button
+                    android:id="@+id/buttonoos"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/piroundbutton" />
+
+                <TextView
+                    android:id="@+id/textViewoos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/buttonoos"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="3dp"
+                    android:text="Out of stock"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/textViewoos"
+                    android:background="@drawable/mfroundbutton" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/button2"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="3dp"
+                    android:text="Missing facing"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/textView2"
+                    android:background="@drawable/ofsroundbutton" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/button3"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="3dp"
+                    android:text="Placement issue"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/progressBarHolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:animateLayoutChanges="true"
+        android:background="#000000"
+        android:clickable="false"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/progresstext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="65dp" />
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/spinner_view"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:background="#3448a8"
+        android:layout_marginTop="103dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible">
+
+        <RelativeLayout
+            android:id="@+id/prioritylayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/cal_spinner_sortby">
+            <TextView
+                android:id="@+id/priority_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Priority"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:textColor="#FFFFFF"
+                />
+            <Button
+                android:id="@+id/ofslegend"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="7dp"
+                android:layout_toEndOf="@id/priority_tv"
+                android:background="@drawable/spinner_ofs" />
+
+            <Button
+                android:id="@+id/mflegend"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_toEndOf="@id/ofslegend"
+                android:background="@drawable/spinner_mf" />
+
+            <Button
+                android:id="@+id/pilegend"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="7dp"
+                android:layout_toEndOf="@id/mflegend"
+                android:background="@drawable/spinner_pi" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/locationlayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/prioritylayout"
+            android:background="@drawable/cal_spinner_sortby">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Location"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:textColor="#FFFFFF" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

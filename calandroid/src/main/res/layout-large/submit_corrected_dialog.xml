@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="360dp"
+    android:layout_height="195dp">
+
+    <RelativeLayout
+        android:id="@+id/headinglayout"
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#0FBA27">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/correct"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/messagelayout"
+        android:layout_width="360dp"
+        android:layout_height="90dp"
+        android:padding="5dp"
+        android:layout_below="@+id/headinglayout">
+
+        <TextView
+            android:id="@+id/submittext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#3648a8"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:text=""/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/messagelayout">
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#7985cb"
+            android:textAllCaps="false"
+            android:text="@string/cancel"
+            android:textSize="16sp"
+            android:textColor="#ffffff"/>
+
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#e6ebfc"
+            android:textAllCaps="false"
+            android:text="@string/ok"
+            android:textSize="16sp"
+            android:textColor="#3648a8"/>
+    </LinearLayout>
+</RelativeLayout>

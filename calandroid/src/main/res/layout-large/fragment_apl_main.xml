@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8D8D8">
+
+    <RelativeLayout
+        android:id="@+id/secondParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false">
+
+        <RelativeLayout
+            android:id="@+id/viewsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/relativeLayout2"
+            android:background="@drawable/generaldownborder"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="8dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:textColor="#3648A8"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/sos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toStartOf="@+id/ca"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/sos_image_selector" />
+
+            <ImageButton
+                android:id="@+id/ca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/ca_image_selector" />
+            <TextView
+                android:id="@+id/categoryname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/title"
+                android:layout_toEndOf="@+id/title"
+                android:textColor="#3648A8"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/pogrogLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/viewsLayout"
+            android:layout_toStartOf="@+id/searchresultlayout"
+            android:background="#FFFFFF"
+            android:padding="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/sos_layout"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:visibility="invisible"
+            android:layout_marginEnd="2dp"
+            android:splitMotionEvents="false"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/viewsLayout"
+            android:layout_toStartOf="@+id/searchresultlayout"
+            android:background="@drawable/generaldownborder"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <RelativeLayout
+                    android:id="@+id/sos_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_marginStart="-5dp"
+                    android:background="@drawable/rightborder">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Share Of Shelf"
+                        android:textSize="14sp"
+                        android:textColor="#4D4D4D"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/sos_viewby"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_toRightOf="@+id/sos_title">
+                    <TextView
+                        android:id="@+id/sos_viewby_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:textSize="12sp"
+                        android:text="View by"
+                        android:textColor="#666666"/>
+                    <Spinner
+                        android:id="@+id/sos_spinner"
+                        android:layout_width="80dp"
+                        android:layout_height="25dp"
+                        android:background="#F4F4F4"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/sos_viewby_text">
+                    </Spinner>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/sos_viewby">
+
+                    <Button
+                        android:id="@+id/buttoncomp"
+                        android:layout_width="24dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="200dp"
+                        android:layout_marginTop="3dp"
+                        android:background="@drawable/sos_green_legend" />
+
+                    <TextView
+                        android:id="@+id/textsosname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@+id/textView"
+                        android:layout_alignTop="@+id/buttoncomp"
+                        android:text="SoS - "
+                        android:textColor="#4D4D4D"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/textcatname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/textsosname"
+                        android:layout_alignBottom="@+id/textsosname"
+                        android:layout_marginStart="6dp"
+                        android:layout_toEndOf="@+id/textsosname"
+                        android:textColor="#4D4D4D"
+                        android:textSize="11sp" />
+
+
+                    <Button
+                        android:id="@+id/buttonothers"
+                        android:layout_width="24dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="200dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_below="@+id/buttoncomp"
+                        android:background="@drawable/sos_red_legend" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/buttonothers"
+                        android:layout_marginStart="14dp"
+                        android:layout_toEndOf="@+id/buttonothers"
+                        android:text="SoS - "
+                        android:textColor="#4D4D4D"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/textothername"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/textView"
+                        android:layout_alignBottom="@+id/textView"
+                        android:layout_alignStart="@+id/textcatname"
+                        android:textColor="#4D4D4D"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tototherper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/textothername"
+                        android:layout_alignBottom="@+id/textothername"
+                        android:layout_alignStart="@+id/totcatper"
+                        android:textColor="#4D4D4D"
+                        android:textSize="11sp" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/searchresultlayout"
+            android:layout_width="265dp"
+            android:layout_height="52dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/apl_search_results_border"
+            android:layout_alignTop="@+id/pogrogLayout"
+            app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pogrogLayout"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
+            <RelativeLayout
+                android:id="@+id/titlelayout"
+                android:layout_width="155dp"
+                android:layout_height="50dp"
+                android:background="@drawable/leftborder">
+
+                <TextView
+                    android:id="@+id/searchTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="3dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/searchResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/searchTitle"
+                    android:padding="3dp"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_toStartOf="@+id/titlelayout"
+                android:background="@drawable/left_border_search"
+                android:padding="3dp">
+
+                <TextView
+                    android:id="@+id/apl_sortBy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:layout_marginTop="5dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/apl_sortspinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/apl_sortBy"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:layout_marginTop="5dp"
+                    android:text="All"
+                    android:textColor="#3648a8"
+                    android:background="@null" />
+
+                <ImageButton
+                    android:id="@+id/apl_sort_drop_down"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_alignBottom="@id/apl_sortspinner"
+                    android:background="@drawable/viewby" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/aplspecificlayout"
+            android:layout_width="265dp"
+            android:layout_height="30dp"
+            android:paddingBottom="2dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/searchresultlayout"
+            android:background="@drawable/sortlayoutborder"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/imageheading"
+                android:layout_width="67dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/rightborder"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Image"
+                android:textColor="#7985cb" />
+
+            <TextView
+                android:id="@+id/nameheading"
+                android:layout_width="145dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/rightborder"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Name"
+                android:textColor="#7985cb" />
+
+            <TextView
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="Facing"
+                android:textColor="#7985cb" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/searchresultview"
+            android:layout_width="265dp"
+            android:layout_height="52dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/pogrogLayout"
+            android:background="@drawable/apl_result_border"
+            android:paddingBottom="2dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="2dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pogrogLayout"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
+            <ImageButton
+                android:id="@+id/backimg"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/searchrightborder"
+                android:src="@drawable/back" />
+
+            <TextView
+                android:id="@+id/searchname"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#3648a8"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingStart="7dp"
+                android:layout_toRightOf="@+id/backimg"
+                android:paddingTop="3dp" />
+
+            <TextView
+                android:id="@+id/searchcount"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:textColor="#3648a8"
+                android:paddingStart="7dp"
+                android:layout_below="@+id/searchname"
+                android:layout_toRightOf="@+id/backimg"
+                android:paddingTop="3dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="265dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/aplspecificlayout"
+            android:layout_above="@+id/submitca"
+            android:background="#D8D8D8"
+            android:paddingEnd="3dp"
+            android:paddingStart="3dp"
+            app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pogrogLayout"
+            app:layout_constraintTop_toBottomOf="@+id/searchresultlayout">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/aplRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                app:reverseLayout="true"
+                app:stackFromEnd="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="265dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/viewsLayout"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/searchresultlayout"
+            android:background="@drawable/generaldownborder"
+            android:padding="5dp"
+            android:paddingEnd="0dp"
+            android:paddingStart="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/apl_search_box"
+                android:layout_width="260dp"
+                android:layout_height="35dp"
+                android:paddingStart="35dp"
+                android:paddingEnd="35dp"
+                android:paddingTop="9dp"
+                android:hint="@string/search_hint"
+                android:textSize="14sp"
+                android:textStyle="normal"
+                android:gravity="start"
+                android:imeActionId="66"
+                android:imeOptions="actionSearch"
+                android:imeActionLabel="actionSearch"
+                android:textColorHint="#CCCCCC"
+                android:background="@drawable/searchborder"
+                android:ellipsize="end"
+                android:layout_gravity="start"
+                android:dropDownVerticalOffset="0dp"
+                android:dropDownWidth="wrap_content"
+                android:dropDownHeight="210dp"
+                android:inputType="textAutoComplete|textAutoCorrect"
+                android:textColor="#000000" >
+            </AutoCompleteTextView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/search" />
+
+            <ImageView
+                android:id="@+id/closesearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="230dp"
+                android:visibility="gone"
+                android:background="@drawable/search_close" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/submitca"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/pogrogLayout"
+            android:background="@drawable/topborder">
+
+            <ImageButton
+                android:id="@+id/submitCA"
+                android:layout_width="265dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="#7985CB"
+                android:paddingEnd="80dp"
+                android:paddingStart="5dp"
+                android:src="@drawable/submit" />
+
+            <TextView
+                android:id="@+id/submittext"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="85dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Submit"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/constantLayout"
+            android:layout_width="758dp"
+            android:layout_height="25dp"
+            android:padding="2dp"
+            android:background="@drawable/footer_layout"
+            android:layout_toStartOf="@+id/submitca"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true">
+
+            <Button
+                android:id="@+id/buttonoos"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="10dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/aplyeslayout" />
+
+            <TextView
+                android:id="@+id/textViewoos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/buttonoos"
+                android:gravity="center"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="3dp"
+                android:text="Yes"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/textViewoos"
+                android:background="@drawable/aplnolayout" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/button2"
+                android:gravity="center"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="3dp"
+                android:text="No"
+                android:textSize="12sp"/>
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/aplunknownlayout"
+                android:layout_toEndOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:paddingTop="3dp"
+                android:layout_toEndOf="@+id/button3"
+                android:text="Unknown"
+                android:textSize="12sp"/>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/aplProgressBarHolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:animateLayoutChanges="true"
+        android:background="#000000"
+        android:clickable="false"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+
+        <TextView
+            android:id="@+id/progresstext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="65dp" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/apl_spinner_view"
+        android:layout_width="170dp"
+        android:layout_height="140dp"
+        android:layout_alignParentEnd="true"
+        android:background="#7985cb"
+        android:layout_marginTop="103dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible">
+
+        <RelativeLayout
+            android:id="@+id/alllayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@drawable/cal_spinner_sortby">
+            <TextView
+                android:id="@+id/priority_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="All"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:textColor="#FFFFFF"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/yeslayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/alllayout"
+            android:background="@drawable/cal_spinner_sortby">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Yes"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:textColor="#FFFFFF" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/nolayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/yeslayout"
+            android:background="@drawable/cal_spinner_sortby">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="No"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:textColor="#FFFFFF" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/unknownlayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/nolayout"
+            android:background="@drawable/cal_spinner_sortby">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Unknown"
+                android:padding="5dp"
+                android:layout_marginStart="5dp"
+                android:textColor="#FFFFFF" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
