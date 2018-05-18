@@ -43,6 +43,12 @@ lane :calTestAndroid do
     build_type: 'Debug'
   )
 
+  hockey(
+  api_token: "063d4b902a4e47b5a47c0231daf64ef7",
+  apk: "./app/build/outputs/apk/debug/app-debug.apk",
+  notes: "Changelog"
+)
+
   # ...
 end
 end
